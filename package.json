@@ -4,13 +4,14 @@
     "description": "A small discord.js bot for server management and other automation.",
     "main": "jasmine.js",
     "scripts": {
-        "start": ""
+        "start": "node --harmony jasmine.js",
+        "test": "node --harmony botanist.js"
     },
     "author": "@sharmavins23",
-    "license": "ISC",
+    "license": "MIT",
     "dependencies": {
         "discord.js": "^12.2.0",
-        "discord.js-commando": "^0.10.0",
+        "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
         "dotenv": "^8.2.0",
         "path": "^0.12.7"
     }

@@ -1,6 +1,6 @@
 require("dotenv").config();
-import commando from "discord.js-commando";
-import path from "path";
+const commando = require("discord.js-commando");
+const path = require("path");
 
 // * Client initialization
 const client = new commando.Client({
@@ -14,7 +14,7 @@ const client = new commando.Client({
 client.on("ready", () => {
     client.user
         .setStatus("online")
-        .setActivity("with the linter", { type: "PLAYING" })
+        .setPresence("with the linter", { type: "PLAYING" })
         .then((presence) =>
             console.log(
                 `Jasmine is ${presence.activities[0].name} on ${client.guilds.size} servers.`

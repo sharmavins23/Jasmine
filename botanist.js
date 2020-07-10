@@ -1,24 +1,22 @@
 require("dotenv").config();
-import commando from "discord.js-commando";
-import path from "path";
+const commando = require("discord.js-commando");
+const path = require("path");
 
 // * Client initialization
 const client = new commando.Client({
     owner: process.env.OWNER,
-    commandPrefix: process.env.PREFIX,
+    commandPrefix: process.env.BOTANIST_PREFIX,
     nonCommandEditable: true,
 });
 
 // * Event handlers
 // Startup
 client.on("ready", () => {
+    client.user.setStatus("online");
     client.user
-        .setStatus("online")
         .setActivity("Jasmine", { type: "WATCHING" })
-        .then((presence) =>
-            console.log(
-                `Botanist is ${presence.activities[0].name} on ${client.guilds.size} servers.`
-            )
+        .then(
+            console.log(`Botanist is online on ${client.guilds.size} servers.`)
         )
         .catch(console.error);
 });
