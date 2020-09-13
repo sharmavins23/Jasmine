@@ -1,6 +1,6 @@
 require("dotenv").config();
 const commando = require("discord.js-commando");
-const { RichEmbed } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 
 class info extends commando.Command {
     constructor(client) {
@@ -21,7 +21,7 @@ class info extends commando.Command {
                     prompt:
                         "Which person would you like to pull information of?",
                     type: "user",
-                    default: "jasmine",
+                    default: "Vins",
                 },
             ],
         });
@@ -29,7 +29,7 @@ class info extends commando.Command {
     async run(message, args) {
         message.react("✅");
 
-        let embed = new RichEmbed()
+        let embed = new MessageEmbed()
             .setAuthor(args.user.username, args.user.displayAvatarURL)
             .setURL(args.user.displayAvatarURL)
             .setColor(message.guild.member(args.user).displayHexColor)
