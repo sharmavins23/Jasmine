@@ -17,7 +17,8 @@ client.on("ready", () => {
         .setActivity("Jasmine", { type: "WATCHING" })
         .then(
             console.log(
-                `Jasmine testbot is online on ${client.guilds.size} servers.` // ! Concat value returns undefined
+                // Now logs size of GuildManager's cache
+                `Jasmine testbot is online on ${client.guilds.cache.size} servers.`
             )
         )
         .catch(console.error);
