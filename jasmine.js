@@ -18,17 +18,7 @@ client.on("ready", () => {
             console.log(
                 `Jasmine is online on ${client.guilds.cache.size} servers.`
             )
-        )
-        .catch(console.error);
-    // client.user
-    //     .setStatus("online")
-    //     .setPresence("with the linter", { type: "PLAYING" })
-    //     .then((presence) =>
-    //         console.log(
-    //             `Jasmine is ${presence.activities[0].name} on ${client.guilds.size} servers.`
-    //         )
-    //     )
-    //     .catch(console.error);
+        );
 });
 
 // Guild events

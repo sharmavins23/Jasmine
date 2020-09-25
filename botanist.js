@@ -13,15 +13,12 @@ const client = new commando.Client({
 // Startup
 client.on("ready", () => {
     client.user.setStatus("online");
-    client.user
-        .setActivity("Jasmine", { type: "WATCHING" })
-        .then(
-            console.log(
-                // Now logs size of GuildManager's cache
-                `Jasmine testbot is online on ${client.guilds.cache.size} servers.`
-            )
+    client.user.setActivity("Jasmine", { type: "WATCHING" }).then(
+        console.log(
+            // Now logs size of GuildManager's cache
+            `Jasmine testbot is online on ${client.guilds.cache.size} servers.`
         )
-        .catch(console.error);
+    );
 });
 
 // Guild events
