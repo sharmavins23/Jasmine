@@ -13,14 +13,22 @@ const client = new commando.Client({
 // Startup
 client.on("ready", () => {
     client.user
-        .setStatus("online")
-        .setPresence("with the linter", { type: "PLAYING" })
-        .then((presence) =>
+        .setActivity("with the linter", { type: "PLAYING" })
+        .then(
             console.log(
-                `Jasmine is ${presence.activities[0].name} on ${client.guilds.size} servers.`
+                `Jasmine is online on ${client.guilds.cache.size} servers.`
             )
         )
         .catch(console.error);
+    // client.user
+    //     .setStatus("online")
+    //     .setPresence("with the linter", { type: "PLAYING" })
+    //     .then((presence) =>
+    //         console.log(
+    //             `Jasmine is ${presence.activities[0].name} on ${client.guilds.size} servers.`
+    //         )
+    //     )
+    //     .catch(console.error);
 });
 
 // Guild events
