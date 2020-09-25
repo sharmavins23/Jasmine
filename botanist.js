@@ -16,17 +16,19 @@ client.on("ready", () => {
     client.user
         .setActivity("Jasmine", { type: "WATCHING" })
         .then(
-            console.log(`Botanist is online on ${client.guilds.size} servers.`)
+            console.log(
+                `Jasmine testbot is online on ${client.guilds.size} servers.` // ! Concat value returns undefined
+            )
         )
         .catch(console.error);
 });
 
 // Guild events
 client.on("guildCreate", (guild) =>
-    console.log(`Jasmine has joined ${guild.name}. ID: ${guild.id}`)
+    console.log(`Jasmine testbot has joined ${guild.name}. ID: ${guild.id}`)
 );
 client.on("guildDelete", (guild) =>
-    console.log(`Jasmine has left ${guild.name}. ID: ${guild.id}`)
+    console.log(`Jasmine testbot has left ${guild.name}. ID: ${guild.id}`)
 );
 
 // Error handling
